@@ -264,6 +264,10 @@ Contributions welcome! Areas for expansion:
 - [ ] Component documentation generator
 - [ ] Snapshot testing setup
 
+<img width="427" height="857" alt="Screenshot 2026-02-03 at 13 45 03" src="https://github.com/user-attachments/assets/354ec1ca-004c-468e-94e7-0b9a2c141c7b" />
+
+
+
 ---
 
 Built with ❤️ using SwiftUI
