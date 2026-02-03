@@ -18,10 +18,10 @@ A comprehensive demonstration of design system architecture patterns in SwiftUI.
 ## 🏛️ Architecture & Leadership Principles
 
  This system is built on the Strategy Pattern and Dependency Injection via Environment, ensuring the UI layer remains decoupled from brand-specific logic.
- - Scalability via Protocols: Every design token (Color, Spacing, Typography) is governed by a protocol, allowing for $O(1)$ brand expansion without modifying core component logic.
- - Performance Optimization: By leveraging the SwiftUI Environment for theme distribution, we eliminate "prop drilling" and ensure that only affected view branches re-render during theme switches.
- - Atomic Design Methodology: Components are categorized from "Tokens" (Atoms) to "UI Components" (Molecules), ensuring a consistent source of truth across large-scale mobile teams.
- - Safety & Predictability: Swift’s type system is utilized to make "illegal states unrepresentable," such as ensuring a component cannot be rendered without a valid semantic color mapping.
+ - **Scalability via Protocols** - Every design token (Color, Spacing, Typography) is governed by a protocol, allowing for $O(1)$ brand expansion without modifying core component logic.
+ - **Performance Optimization** - By leveraging the SwiftUI Environment for theme distribution, we eliminate "prop drilling" and ensure that only affected view branches re-render during theme switches.
+ - **Atomic Design Methodology** - Components are categorized from "Tokens" (Atoms) to "UI Components" (Molecules), ensuring a consistent source of truth across large-scale mobile teams.
+ - **Safety & Predictability** - Swift’s type system is utilized to make "illegal states unrepresentable," such as ensuring a component cannot be rendered without a valid semantic color mapping.
 
 ```
 DesignSystemDemo/
