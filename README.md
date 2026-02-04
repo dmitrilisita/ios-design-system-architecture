@@ -26,21 +26,21 @@ A comprehensive demonstration of design system architecture patterns in SwiftUI.
 ```
 DesignSystemDemo/
 ├── Tokens/
-│   ├── ColorTokens.swift      # Color definitions per brand
-│   ├── SpacingTokens.swift    # Consistent spacing scale
-│   ├── ShapeTokens.swift      # Corner radii, borders
-│   └── TypographyTokens.swift # Font styles
+│   ├── ColorTokens.swift      # Color protocols, brand colors, HighContrastColors wrapper
+│   ├── SpacingTokens.swift    # Standard + Compact spacing scales
+│   ├── ShapeTokens.swift      # Corner radii, border widths per brand
+│   └── TypographyTokens.swift # Dynamic Type-ready fonts, ScaledTypography example
 ├── Themes/
-│   ├── Theme.swift            # Brand + Appearance → Tokens
-│   └── ThemeEnvironment.swift # SwiftUI Environment setup
+│   ├── Theme.swift            # Brand enum, Appearance enum, Theme struct with high contrast support
+│   └── ThemeEnvironment.swift # @Environment setup, .branded() and .accessibleTheme() modifiers
 ├── Components/
-│   ├── DSChip.swift           # Selection/filter chip
-│   ├── DSButton.swift         # Primary/secondary/ghost buttons
-│   └── DSCard.swift           # Container card
+│   ├── DSChip.swift           # Chip with VoiceOver, Reduce Motion, min tap target
+│   ├── DSButton.swift         # Button with loading/disabled states, full a11y support
+│   └── DSCard.swift           # Card with optional content grouping for VoiceOver
 ├── Extensions/
-│   └── Color+Extensions.swift # Hex colors, adaptive colors
+│   └── Color+Extensions.swift # Hex initializer, light/dark adaptive Color
 └── Demo/
-    └── DemoView.swift         # Interactive showcase
+    └── DemoView.swift         # Interactive brand/theme switcher
 ```
 
 ## Key Concepts
