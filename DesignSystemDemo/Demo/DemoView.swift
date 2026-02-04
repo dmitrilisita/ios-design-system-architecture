@@ -13,6 +13,9 @@ struct DemoView: View {
     @State private var selectedBrand: Brand = .sunrise
     @State private var selectedAppearance: Appearance = .light
     @State private var selectedChips: Set<String> = ["SwiftUI"]
+    @State private var showAccessibilityDemo: Bool = false
+    
+    @Environment(\.sizeCategory) private var sizeCategory
     
     private var theme: Theme {
         Theme(brand: selectedBrand, appearance: selectedAppearance)
@@ -23,6 +26,7 @@ struct DemoView: View {
             ScrollView {
                 VStack(spacing: 32) {
                     themeSelector
+                    accessibilitySection
                     chipSection
                     buttonSection
                     cardSection
@@ -78,6 +82,40 @@ struct DemoView: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .themed(theme)
+    }
+    
+    // MARK: - Accessibility Section
+    
+    private var accessibilitySection: some View {
+        DSCard {
+            VStack(alignment: .leading, spacing: 16) {
+                Text("Accessibility")
+                    .font(theme.typography.headingMedium)
+                    .foregroundStyle(theme.colors.textPrimary)
+                
+                Text("Current text size: \(String(describing: sizeCategory))")
+                    .font(theme.typography.bodyMedium)
+                    .foregroundStyle(theme.colors.textSecondary)
+                
+                Toggle("Show Accessibility Demo", isOn: $showAccessibilityDemo)
+                    .font(theme.typography.bodyMedium)
+                    .tint(theme.colors.actionPrimary)
+                
+                if showAccessibilityDemo {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("All components support Dynamic Type")
+                            .font(theme.typography.bodySmall)
+                            .foregroundStyle(theme.colors.textSecondary)
+                        
+                        Text("Try changing text size in Settings")
+                            .font(theme.typography.bodySmall)
+                            .foregroundStyle(theme.colors.textSecondary)
+                    }
+                    .padding(.top, 8)
+                }
+            }
+        }
         .themed(theme)
     }
     

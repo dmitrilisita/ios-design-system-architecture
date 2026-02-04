@@ -41,6 +41,7 @@ struct DSChip: View {
             if let icon {
                 icon
                     .font(theme.typography.labelSmall)
+                    .accessibilityHidden(true) // Icon is decorative
             }
             
             Text(label)
@@ -55,9 +56,35 @@ struct DSChip: View {
             RoundedRectangle(cornerRadius: theme.shapes.cornerRadiusPill)
                 .stroke(borderColor, lineWidth: theme.shapes.borderWidthThin)
         )
-        .accessibilityLabel(label)
-        .accessibilityAddTraits(isSelected ? .isSelected : [])
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityHint(accessibilityHint)
+        .accessibilityAddTraits(accessibilityTraits)
         .animation(.easeInOut(duration: 0.2), value: isSelected)
+    }
+    
+    // MARK: - Accessibility
+    
+    private var accessibilityLabel: String {
+        label
+    }
+    
+    private var accessibilityHint: String {
+        if isSelected {
+            return "Selected. Double tap to deselect"
+        } else {
+            return "Not selected. Double tap to select"
+        }
+    }
+    
+    private var accessibilityTraits: AccessibilityTraits {
+        var traits: AccessibilityTraits = [.isButton]
+        
+        if isSelected {
+            traits.insert(.isSelected)
+        }
+        
+        return traits
     }
     
     // MARK: - Computed Colors

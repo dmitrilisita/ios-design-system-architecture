@@ -59,6 +59,7 @@ struct DSCard<Content: View>: View {
                     .stroke(borderColor, lineWidth: borderWidth)
             )
             .shadow(color: shadowColor, radius: shadowRadius, y: shadowY)
+            .accessibilityElement(children: .contain)
     }
     
     // MARK: - Computed Styles

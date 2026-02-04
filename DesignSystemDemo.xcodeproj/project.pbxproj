@@ -19,6 +19,7 @@
 		010 /* DSChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110 /* DSChip.swift */; };
 		011 /* DSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111 /* DSButton.swift */; };
 		012 /* DSCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112 /* DSCard.swift */; };
+		CE24544F2F33DF9000B75CB5 /* AccessibilityGuidelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24544E2F33DF9000B75CB5 /* AccessibilityGuidelines.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		110 /* DSChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSChip.swift; sourceTree = "<group>"; };
 		111 /* DSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSButton.swift; sourceTree = "<group>"; };
 		112 /* DSCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCard.swift; sourceTree = "<group>"; };
+		CE24544E2F33DF9000B75CB5 /* AccessibilityGuidelines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityGuidelines.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				102 /* DemoView.swift */,
+				CE24544E2F33DF9000B75CB5 /* AccessibilityGuidelines.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -151,7 +154,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					400 = {
 						CreatedOnToolsVersion = 15.0;
@@ -199,6 +202,7 @@
 				006 /* TypographyTokens.swift in Sources */,
 				007 /* Theme.swift in Sources */,
 				008 /* ThemeEnvironment.swift in Sources */,
+				CE24544F2F33DF9000B75CB5 /* AccessibilityGuidelines.swift in Sources */,
 				009 /* Color+Extensions.swift in Sources */,
 				010 /* DSChip.swift in Sources */,
 				011 /* DSButton.swift in Sources */,
@@ -267,6 +271,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -323,6 +328,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};

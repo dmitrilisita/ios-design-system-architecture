@@ -68,10 +68,11 @@ struct DSButton: View {
                     if let icon {
                         icon
                             .font(theme.typography.labelMedium)
+                            .accessibilityHidden(true) // Icon is decorative, label conveys meaning
                     }
                 }
             }
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, minHeight: 44) // Minimum touch target
             .padding(.horizontal, theme.spacing.lg)
             .padding(.vertical, theme.spacing.md)
             .foregroundStyle(foregroundColor)
@@ -85,6 +86,38 @@ struct DSButton: View {
         .disabled(isDisabled || isLoading)
         .opacity(isDisabled ? 0.5 : 1.0)
         .animation(.easeInOut(duration: 0.2), value: isLoading)
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityHint(accessibilityHint)
+        .accessibilityAddTraits(accessibilityTraits)
+    }
+    
+    // MARK: - Accessibility
+    
+    private var accessibilityLabel: String {
+        if isLoading {
+            return "\(label), loading"
+        }
+        return label
+    }
+    
+    private var accessibilityHint: String {
+        if isDisabled {
+            return "Button is disabled"
+        } else if isLoading {
+            return "Please wait"
+        }
+        return ""
+    }
+    
+    private var accessibilityTraits: AccessibilityTraits {
+        var traits: AccessibilityTraits = [.isButton]
+        
+        if isDisabled || isLoading {
+            traits.insert(.isStaticText)
+            traits.remove(.isButton)
+        }
+        
+        return traits
     }
     
     // MARK: - Computed Styles
