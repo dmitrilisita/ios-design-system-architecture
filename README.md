@@ -1,3 +1,5 @@
+<img width="2752" height="1536" alt="Scalable-SwiftUI-Architecture" src="https://github.com/user-attachments/assets/5f35e4b2-ead1-45b8-aa37-5b751925ffe3" />
+
 # SwiftUI Design System Demo
 
 A comprehensive demonstration of design system architecture patterns in SwiftUI. This project showcases how to build scalable, multi-brand, theme-aware UI components using modern SwiftUI practices.
